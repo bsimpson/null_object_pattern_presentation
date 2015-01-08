@@ -3,6 +3,7 @@ load './lib/drinks/drink.rb'
 load './lib/drinks/bells_two_hearted_ale.rb'
 load './lib/drinks/sweetwater_420.rb'
 load './lib/drinks/gin_and_tonic.rb'
+load './lib/drinks/null_drink.rb'
 
 # 4 friends celebrate the New Year at a bar
 eric = Friend.new('Eric')
@@ -19,6 +20,7 @@ ben = Friend.new('Ben')
 eric.orders(BellsTwoHeartedAle.new)
 jeff.orders(Sweetwater420.new)
 dberk.orders(GinAndTonic.new)
+ben.orders(NullDrink.new)
 
 # Ben doesn't want a drink, so doesn't order
 
@@ -33,7 +35,6 @@ dberk.orders(GinAndTonic.new)
 # We could fix this the same way, but we are seeing a pattern emerge...
 
 # Lets instead order Ben a tall glass of null object
-# ben.orders(NullDrink.new)
 [eric, jeff, dberk, ben].map(&:toast)
 
 # Now we can calculate what we owe
